@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5544731822460192015}
   - component: {fileID: 4616620768409886214}
   - component: {fileID: 6425032659567626302}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HoveringRobot02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7333883533685706682}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -129,8 +129,9 @@ GameObject:
   - component: {fileID: 8199275750670289849}
   - component: {fileID: 7544940889109103917}
   - component: {fileID: 3904848335624481571}
-  - component: {fileID: 1929670043568139446}
   - component: {fileID: 2114626779327001514}
+  - component: {fileID: 2426570958103182493}
+  - component: {fileID: 2796088190981472620}
   m_Layer: 7
   m_Name: Robot
   m_TagString: Untagged
@@ -172,8 +173,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
+  m_Height: 1.5
+  m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &3904848335624481571
@@ -188,8 +189,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909f07d68ddcbb347930fb22764ff3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &1929670043568139446
-SphereCollider:
+--- !u!114 &2114626779327001514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8881844560159084303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ad32ba9636f8f44b641c58ae43a671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+--- !u!136 &2426570958103182493
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -206,19 +220,30 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2114626779327001514
-MonoBehaviour:
+--- !u!95 &2796088190981472620
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8881844560159084303}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85ad32ba9636f8f44b641c58ae43a671, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 3
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 917a0e75f344e8740b83c75aeb5a24be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
